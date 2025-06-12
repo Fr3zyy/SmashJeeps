@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Unity.Mathematics.Geometry;
+using Unity.Netcode;
 using UnityEngine;
-
-public class PlayerVehicleController : MonoBehaviour
+using Cysharp.Threading.Tasks;
+public class PlayerVehicleController : NetworkBehaviour
 {
     public class SpringData
     {
@@ -46,14 +46,24 @@ public class PlayerVehicleController : MonoBehaviour
         }
     }
 
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        _vehicleRigidbody.isKinematic = true;
+        SetOwnerRigidbodyKinematicAsync();
+    }
     private void Update()
     {
+        if (!IsOwner) { return; }
+
         SetSteerInput(Input.GetAxis("Horizontal"));
         SetAccelerateInput(Input.GetAxis("Vertical"));
     }
 
     private void FixedUpdate()
     {
+        if (!IsOwner) { return; }
+
         // SÜSPANSİYON
         UpdateSuspension();
         // STEERING - YER YÖN
@@ -288,6 +298,15 @@ public class PlayerVehicleController : MonoBehaviour
     public float GetSpringCurrentLength(WheelType wheelType)
     {
         return _springDatas[wheelType]._currentLength;
+    }
+    public async void SetOwnerRigidbodyKinematicAsync()
+    {
+        if (IsOwner)
+        {
+            await UniTask.DelayFrame(1);
+            _vehicleRigidbody.isKinematic = false;
+
+        }
     }
     public static class SpringMathExtensions
     {
