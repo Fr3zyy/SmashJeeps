@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -1100997158052725837}
   - component: {fileID: 8965806997789117716}
   - component: {fileID: 6894245057089796874}
+  - component: {fileID: 4167310787788780952}
   - component: {fileID: 2950204947352559085}
   - component: {fileID: -2792793751239518167}
   - component: {fileID: 5904206800808747153}
@@ -104,6 +105,18 @@ MonoBehaviour:
   _wheelsSpinSpeed: 70
   _wheelsYWhenSpringMin: 0.6
   _wheelsYWhenSpringMax: 0.3
+--- !u!114 &4167310787788780952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269337546379751113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff83868f0d6be441af0c950c285cbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2950204947352559085
 MonoBehaviour:
   m_ObjectHideFlags: 0
