@@ -129,12 +129,32 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3276689602543705844, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
       propertyPath: _mysteryBoxSkills.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3276689602543705844, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
       propertyPath: '_mysteryBoxSkills.Array.data[0]'
       value: 
+      objectReference: {fileID: 11400000, guid: 346022d1f3d79bd41a5809425ac4f875, type: 2}
+    - target: {fileID: 3276689602543705844, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
+      propertyPath: '_mysteryBoxSkills.Array.data[1]'
+      value: 
       objectReference: {fileID: 11400000, guid: 96af971b49ad93446bc95d7becb798d2, type: 2}
+    - target: {fileID: 3276689602543705844, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
+      propertyPath: '_mysteryBoxSkills.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1672de183db86554988f081c119ba59c, type: 2}
+    - target: {fileID: 3276689602543705844, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
+      propertyPath: '_mysteryBoxSkills.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 53fc37f593e3a8d4eaa80a82938e207a, type: 2}
+    - target: {fileID: 3276689602543705844, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
+      propertyPath: '_mysteryBoxSkills.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ddbc692d31e39540b1fa5eacb0d5bef, type: 2}
+    - target: {fileID: 3276689602543705844, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
+      propertyPath: '_mysteryBoxSkills.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ddbc692d31e39540b1fa5eacb0d5bef, type: 2}
     - target: {fileID: 3698251951156240477, guid: 310da95701d440e4fba0f7190dbcb071, type: 3}
       propertyPath: m_Name
       value: MysteryBox

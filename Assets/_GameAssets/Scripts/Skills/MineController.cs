@@ -22,18 +22,21 @@ public class MineController : NetworkBehaviour
         {
             _hasLanded = true;
             transform.position = hit.point;
+            // reset rotation to 0.0.0
+            transform.rotation = Quaternion.identity;
             if (_lastSendPosition != transform.position)
             {
-                SyncPositionRpc(transform.position);
+                SyncPositionRpc(transform.position, transform.rotation);
                 _lastSendPosition = transform.position;
             }
         }
         else
         {
             transform.position += _fallSpeed * Vector3.down * Time.deltaTime;
+            transform.rotation = Quaternion.identity;
             if (_lastSendPosition != transform.position)
             {
-                SyncPositionRpc(transform.position);
+                SyncPositionRpc(transform.position, transform.rotation);
                 _lastSendPosition = transform.position;
             }
         }
@@ -46,11 +49,12 @@ public class MineController : NetworkBehaviour
         }
     }
     [Rpc(SendTo.ClientsAndHost)]
-    private void SyncPositionRpc(Vector3 newPosition)
+    private void SyncPositionRpc(Vector3 newPosition, Quaternion newRotation)
     {
         if (IsServer) return;
 
         transform.position = newPosition;
+        transform.rotation = newRotation;
     }
     [Rpc(SendTo.Owner)]
     private void SetOwnerVisualsRpc()
