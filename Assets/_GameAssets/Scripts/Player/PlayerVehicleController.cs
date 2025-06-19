@@ -68,7 +68,7 @@ public class PlayerVehicleController : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            CrashJeep();
+            CrashVehicle();
         }
     }
 
