@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcf390e26b87494aa6df430cb419842, type: 3}
+  m_Name: RocketSkill
+  m_EditorClassIdentifier: 
+  _skillName: Rocket
+  _skillIcon: {fileID: -738948584, guid: a2cb6dca4a1150c45bb3dddcd501accc, type: 3}
+  _skillType: 3
+  _skillUsageType: 0
+  _skillData: {fileID: 11400000, guid: feb3c8eb799d37748af5017d568f4f25, type: 2}

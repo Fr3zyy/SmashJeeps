@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface ICollectible
 {
-    void Collect();
+    void Collect(PlayerSkillController skillController);
     void CollectRpc();
 }

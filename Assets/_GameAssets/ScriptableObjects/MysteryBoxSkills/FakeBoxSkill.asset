@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcf390e26b87494aa6df430cb419842, type: 3}
+  m_Name: FakeBoxSkill
+  m_EditorClassIdentifier: 
+  _skillName: Fake Box
+  _skillIcon: {fileID: 95911951, guid: 6f5111872d5cbc4439d87fca51b73b54, type: 3}
+  _skillType: 1
+  _skillUsageType: 0
+  _skillData: {fileID: 11400000, guid: d61e4124d29518d43b810f5e146201c8, type: 2}

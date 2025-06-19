@@ -1,0 +1,11 @@
+using Unity.Netcode;
+using UnityEngine;
+
+public struct PositionDataSerializable : INetworkSerializeByMemcpy
+{
+    public Vector3 Position { get; set; }
+    public PositionDataSerializable(Vector3 position)
+    {
+        Position = position;
+    }
+}
