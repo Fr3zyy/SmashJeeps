@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
+using System;
 public class PlayerVehicleController : NetworkBehaviour
 {
     public class SpringData
@@ -27,6 +28,12 @@ public class PlayerVehicleController : NetworkBehaviour
     [SerializeField] private VehicleSettingsSO _vehicleSettings;
     [SerializeField] private Rigidbody _vehicleRigidbody;
     [SerializeField] private BoxCollider _vehicleCollider;
+
+    [Header("Settings")]
+    [SerializeField] private float _crashForce;
+    [SerializeField] private float _crashTorque;
+
+    public event Action OnVehicleCrashed;
 
     public VehicleSettingsSO Settings => _vehicleSettings;
     public Vector3 Forward => transform.forward;
@@ -58,6 +65,11 @@ public class PlayerVehicleController : NetworkBehaviour
 
         SetSteerInput(Input.GetAxis("Horizontal"));
         SetAccelerateInput(Input.GetAxis("Vertical"));
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            CrashJeep();
+        }
     }
 
     private void FixedUpdate()
@@ -307,6 +319,12 @@ public class PlayerVehicleController : NetworkBehaviour
             _vehicleRigidbody.isKinematic = false;
 
         }
+    }
+    public void CrashVehicle()
+    {
+        OnVehicleCrashed?.Invoke();
+        _vehicleRigidbody.AddForce(Vector3.up * _crashForce, ForceMode.Impulse);
+        _vehicleRigidbody.AddTorque(Vector3.forward * _crashTorque, ForceMode.Impulse);
     }
     public static class SpringMathExtensions
     {

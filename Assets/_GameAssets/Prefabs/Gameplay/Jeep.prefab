@@ -85,6 +85,8 @@ MonoBehaviour:
   _vehicleSettings: {fileID: 11400000, guid: 5be434359530e604cb0623c9e0af28db, type: 2}
   _vehicleRigidbody: {fileID: 667351789752924816}
   _vehicleCollider: {fileID: 6293636960005046451}
+  _crashForce: 500
+  _crashTorque: -150
 --- !u!114 &2106904326100009886
 MonoBehaviour:
   m_ObjectHideFlags: 0

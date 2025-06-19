@@ -8,7 +8,7 @@ public class SkillManager : NetworkBehaviour
 {
     public static SkillManager Instance { get; private set; }
 
-    public Action OnMineCountReduced;
+    public event Action OnMineCountReduced;
 
     [SerializeField] private MysteryBoxSkillsSO[] _skills;
     [SerializeField] private LayerMask _groundLayer;
