@@ -325,6 +325,7 @@ public class PlayerVehicleController : NetworkBehaviour
         OnVehicleCrashed?.Invoke();
         _vehicleRigidbody.AddForce(Vector3.up * _crashForce, ForceMode.Impulse);
         _vehicleRigidbody.AddTorque(Vector3.forward * _crashTorque, ForceMode.Impulse);
+        enabled = false;
     }
     public static class SpringMathExtensions
     {
