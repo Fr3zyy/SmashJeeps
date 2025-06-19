@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   _skillController: {fileID: 2106904326100009886}
+  _vehicleController: {fileID: 8965806997789117716}
 --- !u!114 &2950204947352559085
 MonoBehaviour:
   m_ObjectHideFlags: 0

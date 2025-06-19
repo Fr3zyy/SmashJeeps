@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerInteractionController : NetworkBehaviour
 {
     [SerializeField] private PlayerSkillController _skillController;
+    [SerializeField] private PlayerVehicleController _vehicleController;
 
     public override void OnNetworkDespawn()
     {
@@ -17,6 +18,11 @@ public class PlayerInteractionController : NetworkBehaviour
         if (other.gameObject.TryGetComponent(out ICollectible collectible))
         {
             collectible.Collect(_skillController);
+        }
+
+        if (other.gameObject.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.Damage(_vehicleController);
         }
     }
 }
